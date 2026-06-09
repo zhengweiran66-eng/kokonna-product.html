@@ -224,6 +224,9 @@
       background: var(--accent);
       color: var(--bg2);
       box-shadow: 0 12px 28px var(--shadow);
+      border: 0;
+      font: inherit;
+      cursor: pointer;
     }
 
     .link {
@@ -1124,6 +1127,16 @@
       color: var(--accent2);
     }
 
+    .buy-note {
+      position: relative;
+      z-index: 1;
+      margin: 16px auto 0;
+      max-width: 560px;
+      color: var(--accent2);
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
     footer {
       padding: 28px 20px 40px;
       color: var(--muted);
@@ -1554,9 +1567,10 @@
         <h2>把想象，挂在墙上。</h2>
         <p class="lead">KoKonna AI 电子纸画框，把生成式 AI 的灵感和家居装饰的安静质感放在同一个画框里。</p>
         <div class="hero-actions">
-          <a class="button" href="https://www.taobao.com/list/item/Z1FmdlFjSFJ2VWZhMUtENHQrVWptUT09.htm" target="_blank" rel="noopener">查看淘宝商品</a>
-          <a class="link" href="#top">返回顶部 ›</a>
+          <button class="button" type="button" data-copy-taobao="KoKonna AI电子纸画框">复制淘宝搜索词</button>
+          <a class="link" href="https://www.taobao.com/" target="_blank" rel="noopener">打开淘宝搜索 ›</a>
         </div>
+        <p class="buy-note">淘宝可能会拦截外部网站直跳商品页。复制搜索词后，在淘宝搜索框粘贴即可找到商品。</p>
       </div>
     </section>
   </main>
