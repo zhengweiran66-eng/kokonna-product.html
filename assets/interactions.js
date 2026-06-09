@@ -6,6 +6,7 @@
   var sizeEl = document.querySelector('[data-product-size]');
   var materialEl = document.querySelector('[data-product-material]');
   var sceneEl = document.querySelector('[data-product-scene]');
+  var copyTaobaoButton = document.querySelector('[data-copy-taobao]');
 
   function setActiveFrame(frame) {
     if (!frame) {
@@ -48,6 +49,28 @@
       setActiveFrame(frame);
     });
   });
+
+  if (copyTaobaoButton) {
+    copyTaobaoButton.addEventListener('click', function () {
+      var keyword = copyTaobaoButton.getAttribute('data-copy-taobao') || 'KoKonna AI电子纸画框';
+      var originalText = copyTaobaoButton.textContent;
+
+      function showCopied() {
+        copyTaobaoButton.textContent = '已复制，去淘宝搜索';
+        window.setTimeout(function () {
+          copyTaobaoButton.textContent = originalText;
+        }, 1800);
+      }
+
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(keyword).then(showCopied).catch(function () {
+          window.prompt('复制下面的淘宝搜索词：', keyword);
+        });
+      } else {
+        window.prompt('复制下面的淘宝搜索词：', keyword);
+      }
+    });
+  }
 
   if (reduceMotion || !finePointer) {
     return;
